@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import DisplayEmployee from './components/DisplayEmployee'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      employee: sampleEmployee
+    };
+  }
+  render() {
+    return(
+      <div className="App">
+        <DisplayEmployee employee={this.state.employee}/>
+        <button type="button" onClick={this.getEmployee}>Get employee</button>
+      </div>
+    )};
 }
 
 export default App;
